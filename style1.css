@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #181818;
+}
+
+.wrapper{
+    max-height: 600px;
+    background: #181818;
+    color: #dbdbdb;
+    width: 450px;
+    /* height: 500px; */
+    border-radius: 17px;
+    box-shadow: 0 0 128px 0 rgba(255, 255, 255, 0.1),
+                0 32px 64px -48px rgba(255, 255, 255, 0.1);
+}
+
+/* sign up form css */
+
+.form{
+    padding: 25px 30px;
+}
+
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.form form{
+    margin: 20px 0
+}
+
+.form form .error-text{
+    color: #e6929a;
+    background-color: #6e494c;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #553a3d;
+    display: none;
+}
+
+.form form .name-details{
+    display: flex;
+}
+
+.form form .name-details .field:first-child{
+    margin-right: 10px;
+}
+
+.form form .name-details .field:last-child{
+    margin-left: 10px;
+}
+
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form form .field label{
+    margin-bottom: 2px;
+}
+
+/* .form form .field input{
+    outline: none;
+} */
+
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #cccccc;
+    color: #dbdbdb;
+    background-color: #181818;
+    border-radius: 5px;
+}
+
+.form form .image input{
+    font-size: 16px;
+}
+
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    background: #333333;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: #cccccc;
+    top: 60%;
+    cursor: pointer;
+}
+
+.form form .field i.active::before{
+    color: #333333;
+    content: "\f070";
+}
+
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.form .link a{
+    color: #dadada;
+}
+
+.form .link a:hover{
+    text-decoration: underline;
+}
+
+/* User list css */
+
+.users{
+    padding: 25px 30px;
+}
+
+.users header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.users header .content,
+.users-list a .content{
+    display: flex;
+}
+
+
+.users header .content img,
+.users-list a .content img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+
+.users header .details{
+    margin-left: 15px;
+}
+
+.users header .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.users header .details p{
+    font-size: 15px;
+}
+
+.users header .logout{
+    color: #ffffff;
+    background: #333333;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.users .search .text{
+    font-size: 18px;
+}
+
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: calc(100% - 50px);
+    border: 1px solid #cccccc;
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.users .search input.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.users .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 0 5px 5px 0;
+}
+
+.users .search button.active{
+    color: #333;
+    background: #fff;
+}
+
+.users .search button.active i::before{
+    content: "\f00d";
+}
+
+.users-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+:is(.users-list, .chat-box)::-webkit-scrollbar{
+    width: 0px;
+}
+
+.users-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.users-list a .content img{
+    height: 45px;
+    width: 45px;
+}
+
+.users-list a{
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+
+.users-list a:last-child{
+    border: none;
+    margin-bottom: 0px;
+}
+
+.users-list .details{
+    margin-left: 15px;
+}
+
+.users-list .details span{
+    font-size: 18px;
+    font-weight: 500;
+    color: #dbdbdb;
+}
+
+.users-list .details p{
+    font-size: 13px;
+    color: #8d8d8d;
+}
+
+.users-list a .status-dot{
+    font-size: 12px;
+    color: #468669;
+}
+
+.users-list a .add-friend{
+    font-size: 17px;
+    margin-right: -80px !important;
+    color: #cccccc;
+}
+
+.users-list a .add-friend.hide{
+    display: none;
+}
+
+.users-list a .status-dot.offline{
+    color: #cccccc;
+}
+
+/* chat area css */
+
+
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+}
+
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: #dbdbdb;
+}
+
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.chat-area header p{
+    font-size: 14px;
+}
+
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.chat-box{
+    height: 440px;
+    background-image: url("whatsappDarkBG.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    overflow-y: auto;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 /7%),
+                inset 0 -32px 32px -32px rgb(0 0 0 /7%);
+}
+
+.chat-box .chat{
+    margin: 15px 0;
+}
+
+.chat-box .chat p{
+    word-wrap: break-word;
+    padding: 8px 16px;
+    box-shadow:  0 0 32px rgb(255 255 255 /5%),
+                 0 16px 16px -16px rgb(255 255 255 / 6%);
+    font-size: 13px;
+}
+
+.chat-box .outgoing{
+    display: flex;
+}
+
+.outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 170px);
+}
+
+.outgoing .details p{
+    background: #333333;
+    color: #ffffff;
+    border-radius: 18px 18px 0 18px;
+}
+
+.outgoing .details .outgoing-img{
+    max-height: 225px;
+    max-width: 225px;
+}
+
+.chat-box .incoming .incoming-profile{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 170px);
+}
+
+.incoming .details p{
+    background: #fff;
+    color: #333;
+    border-radius: 18px 18px 18px 0;
+}
+
+.incoming .details .incoming-img{
+    max-height: 225px;
+    max-width: 225px;
+}
+
+.chat-area .typing-area{
+    padding: 18px 30px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.typing-area input{
+    height: 40px;
+    width: calc(100% - 58px);
+    font-size: 14px;
+    /* border: 1px solid #cccccc; */
+    background: #333;
+    color: #dbdbdb;
+    padding: 0 33px 0 13px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    border: none;
+}
+
+.typing-area .fa-paperclip{
+    position: absolute;
+    right: 100px;
+    color: #cccccc;
+    top: 42%;
+    cursor: pointer;
+}
+
+.typing-area button{
+    width: 55px;
+    border: none;
+    outline: none;
+    background: #333333;
+    color: #ffffff;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2e2e2e;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content ul{
+    list-style-type: none;
+}
+
+.dropdown-content ul li{
+    margin-top:5px
+}
+
+.dropdown-content ul li a{
+    color: #dbdbdb !important;
+}
+
+/* slider btn */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responive media query */
+@media screen and (max-width: 450px) {
+    body{
+      min-height: 100%;
+    }
+    .wrapper{
+        margin-top: 8%;
+    } 
+    .form, .users{
+      padding: 20px;
+    }
+    .form header{
+      text-align: center;
+    }
+    .form form .name-details{
+      flex-direction: column;
+    }
+    .form form .name-details .field:first-child{
+      margin-right: 0px;
+    }
+    .form form .name-details .field:last-child{
+      margin-left: 0px;
+    }
+  
+    .users header img{
+      height: 45px;
+      width: 45px;
+    }
+    .users header .logout{
+      padding: 6px 10px;
+      font-size: 16px;
+    }
+    :is(.users, .users-list) .content .details{
+      margin-left: 15px;
+    }
+  
+    .users-list a{
+      padding-right: 10px;
+    }
+
+    .users-list a .add-friend{
+        margin-right: -45px !important;
+    }
+  
+    .chat-area header{
+      padding: 15px 20px;
+    }
+    .chat-box{
+      min-height: 400px;
+      padding: 10px 15px 15px 20px;
+    }
+    .chat-box .chat p{
+      font-size: 15px;
+    }
+    .chat-box .outogoing .details{
+      max-width: 230px;
+    }
+    .chat-box .incoming .details{
+      max-width: 265px;
+    }
+    .incoming .details img{
+      height: 30px;
+      width: 30px;
+    }
+    .chat-area form{
+      padding: 20px;
+    }
+    .chat-area form input{
+      height: 40px;
+      width: calc(100% - 48px);
+    }
+    .chat-area form button{
+      width: 45px;
+    }
+  }
+  
